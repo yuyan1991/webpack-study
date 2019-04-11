@@ -10,5 +10,19 @@ module.exports = {
       historyApiFallback: true,//不跳转
       inline: true,//实时刷新
       port: 2333
+    },
+    module: {
+        rules: [
+            {
+                test: /(\.jsx|\.js)$/,
+                use:  ['babel-loader'],
+                exclude: /node_modules/
+            }
+        ]
+    },
+    performance: {
+      hints: false,
+      maxEntrypointSize: 512000,
+      maxAssetSize: 512000
     }
 }
